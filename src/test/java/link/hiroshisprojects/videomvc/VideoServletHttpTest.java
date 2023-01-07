@@ -27,7 +27,7 @@ public class VideoServletHttpTest {
 	private final CloseableHttpClient httpClient = HttpClients.createDefault();
 
 	@Test
-	public void whenVideoAdded_theMessage() {
+	public void whenVideoAdded_thenMessage() {
 		String randomID = UUID.randomUUID().toString();
 		String title = "Video - " + randomID;
 		String url = "http://coursera.org/some/video-" + randomID;
