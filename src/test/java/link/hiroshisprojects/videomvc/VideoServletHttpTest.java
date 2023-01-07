@@ -40,7 +40,7 @@ public class VideoServletHttpTest {
 			assertEquals(200, response.getStatusLine().getStatusCode());
 
 			String responseBody = extractResponseBody(response);
-			String expected = title + " : " + url + "\n";
+			String expected = VideoServlet.VIDEO_ADDED; 
 			assertEquals(expected, responseBody);
 
 		} catch (Exception e) {

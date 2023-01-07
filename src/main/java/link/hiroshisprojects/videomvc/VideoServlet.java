@@ -18,7 +18,6 @@ public class VideoServlet extends HttpServlet {
 
 	public VideoServlet() {
 		System.out.println("Initializing Video Servlet...");
-		videos.add(new Video("Jackie Chan Adventures", "google.com", 70000));
 	}
 
 	@Override
