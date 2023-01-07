@@ -1,0 +1,5 @@
+= Java MVC Done Many Ways
+
+Deplying an MVC as "manually" as possible. Started by generating a creating
+a simple servlet, packaging it into a WAR file with Gradle, then copying it 
+into the ``webapp`` directory on a locally running Tomcat server.
