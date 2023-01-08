@@ -1,4 +1,4 @@
-package link.hiroshisprojects.videomvc;
+package link.hiroshisprojects.servlet;
 
 public class Video {
 
