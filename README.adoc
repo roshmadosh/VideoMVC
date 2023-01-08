@@ -4,4 +4,12 @@ Deplying an MVC web app as "manually" as possible. +
 
 Started by generating a creating a simple servlet, packaging it into a 
 WAR file with Gradle, then copying it into the ``webapp`` directory on 
-a locally running Tomcat server.
+a locally running Tomcat server. +
+
+IMPORTANT: `@EnableWebMvc` is a required annotation for your configuration class if you 
+want object-mapping on your controllers.  
+
+The config classes are where you set `@ComponentScan` so you don't have to register the 
+beans yourself. Every context has it's own config file, i.e. it's own set of beans. 
+You can distinguish shared _root_ contexts from isolated _servlet_, or app-level contexts.  
+

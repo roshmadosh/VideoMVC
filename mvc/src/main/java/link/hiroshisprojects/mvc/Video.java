@@ -5,7 +5,9 @@ public class Video {
 	private String name;
 	private String url;
 	private long duration;
+
 	public Video() {}
+
 	public Video(String name, String url, long duration) {
 		this.name = name;
 		this.url = url;
@@ -28,6 +30,10 @@ public class Video {
 	}
 	public void setDuration(long duration) {
 		this.duration = duration;
+	}
+	@Override
+	public String toString() {
+		return "Video [name=" + name + ", url=" + url + ", duration=" + duration + "]";
 	}
 
 
