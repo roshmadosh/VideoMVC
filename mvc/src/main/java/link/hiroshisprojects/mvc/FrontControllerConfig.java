@@ -2,21 +2,23 @@ package link.hiroshisprojects.mvc;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import link.hiroshisprojects.multipart.MultipartFileConfig;
+
 public class FrontControllerConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { WebMvcConfig.class };
+		return null; 
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return null;
+		return new Class[] { WebMvcConfig.class, MultipartFileConfig.class }; 
 	}
 
 	@Override
 	protected String[] getServletMappings() {
-		return new String[] { "/" };
+		return new String[] { "/video/*", "/multipart/*" };
 	}
 
 }

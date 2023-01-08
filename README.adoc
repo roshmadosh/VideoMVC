@@ -13,3 +13,6 @@ The config classes are where you set `@ComponentScan` so you don't have to regis
 beans yourself. Every context has it's own config file, i.e. it's own set of beans. 
 You can distinguish shared _root_ contexts from isolated _servlet_, or app-level contexts.  
 
+IMPORTANT: `@RequestMapping` value attribute is taken literally when it matches the dispatcher mapping, 
+otherwise the path is appended to the dispatcher mapping. E.g. `@RequestMapping(value = "/video/health")` 
+maps to `/video/video/health`, where `/video` is the dispatcher mapping. 
