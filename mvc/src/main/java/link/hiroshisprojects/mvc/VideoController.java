@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -30,11 +34,11 @@ public class VideoController {
 			return filtered.get(0); 
 		}
 	}			
-
+	
 	@PostMapping
-	public Video addVideo(@RequestBody Video video) {
+	public ResponseEntity<String> addVideo(@Valid @RequestBody Video video) {		
 		videos.add(video);	
-		return video; 
+		return new ResponseEntity<String>(HttpStatus.CREATED);
 	}
 }
 

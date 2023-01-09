@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,8 +27,10 @@ public class MultipartController {
 									RedirectAttributes redirectAttributes) {
 
 		if (file.isEmpty()) {
-			redirectAttributes.addFlashAttribute("message", "Upload failed. Please choose another to upload!");
-			return "redirect:uploadStatus";
+			// redirectAttributes.addFlashAttribute("message", "Upload failed. Please choose another to upload!");
+			// return "redirect:uploadStatus";
+			redirectAttributes.addFlashAttribute("errorMessage", "Please include a file to upload!");
+			return "redirect:error";
 		}
 
 		try {

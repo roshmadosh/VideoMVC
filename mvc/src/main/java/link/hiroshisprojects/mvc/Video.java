@@ -1,8 +1,11 @@
 package link.hiroshisprojects.mvc;
 
-public class Video {
+import javax.validation.constraints.NotNull;
 
+public class Video {
+	@NotNull(message="Name cannot be null")
 	private String name;
+
 	private String url;
 	private long duration;
 

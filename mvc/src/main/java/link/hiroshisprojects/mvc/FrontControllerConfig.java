@@ -7,6 +7,7 @@ import javax.servlet.ServletRegistration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import link.hiroshisprojects.error.ErrorConfig;
 import link.hiroshisprojects.multipart.MultipartFileConfig;
 
 public class FrontControllerConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -20,12 +21,12 @@ public class FrontControllerConfig extends AbstractAnnotationConfigDispatcherSer
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class[] { WebMvcConfig.class, MultipartFileConfig.class }; 
+		return new Class[] { WebMvcConfig.class, MultipartFileConfig.class, ErrorConfig.class }; 
 	}
 
 	@Override
 	protected String[] getServletMappings() {
-		return new String[] { "/video/*", "/multipart/*" };
+		return new String[] { "/" };
 	}
 
 
