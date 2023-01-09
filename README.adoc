@@ -16,3 +16,7 @@ You can distinguish shared _root_ contexts from isolated _servlet_, or app-level
 IMPORTANT: `@RequestMapping` value attribute is taken literally when it matches the dispatcher mapping, 
 otherwise the path is appended to the dispatcher mapping. E.g. `@RequestMapping(value = "/video/health")` 
 maps to `/video/video/health`, where `/video` is the dispatcher mapping. 
+
+
+IMPORTANT: Remember that if your controllers are serving `ViewResolver`s, to _not_ use the `@RestController` 
+annotation. This annotation implicitly uses `@ResponseBody` which automatically serializes the response to JSON.
