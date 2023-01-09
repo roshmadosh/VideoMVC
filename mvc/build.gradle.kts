@@ -21,6 +21,7 @@ dependencies {
 	implementation("org.springframework:spring-web:$springmvc")
 	implementation("com.fasterxml.jackson.core:jackson-core:2.13.3")
 	implementation("com.fasterxml.jackson.core:jackson-databind:2.13.3")
+	implementation("javax.servlet:jstl:1.2")
 }
 
 tasks.named<Test>("test") {
