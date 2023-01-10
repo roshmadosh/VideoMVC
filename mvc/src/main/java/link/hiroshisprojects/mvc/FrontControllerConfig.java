@@ -32,11 +32,15 @@ public class FrontControllerConfig extends AbstractAnnotationConfigDispatcherSer
 
 	@Override
 	protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+		// Location for saving Multipart files
 		File tempDir = new File(System.getProperty("java.io.tmpdir"));
 
 		MultipartConfigElement multipartConfigElement = 
 			new MultipartConfigElement(tempDir.getAbsolutePath(), maxUploadSizeInBytes, maxUploadSizeInBytes * 2, maxUploadSizeInBytes /2);
 
 		registration.setMultipartConfig(multipartConfigElement);
+
+		// Log level
+		registration.setInitParameter("enableLoggingRequestDetails", "true");
 	}
 }

@@ -23,7 +23,6 @@ dependencies {
 	implementation("com.fasterxml.jackson.core:jackson-databind:2.13.3")
 	implementation("javax.servlet:jstl:1.2")
 	implementation("org.hibernate.validator:hibernate-validator:6.2.0.Final")
-
 }
 
 tasks.named<Test>("test") {
