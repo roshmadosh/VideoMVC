@@ -19,12 +19,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class MultipartController {
 	private final String filepath;
-
+	private final String os;
 	public MultipartController() {
-		String os = System.getProperty("os.name");
+		os = System.getProperty("os.name");
 
+		System.out.println("Multipart Controller created...");
 		if (os.equals("Linux")) {
-			filepath = "/tmp/VideoMVC";
+			filepath = "/tmp/VideoMVC/";
 		} else {
 			filepath = null;
 		}
@@ -32,8 +33,14 @@ public class MultipartController {
 
 	@GetMapping
 	public ModelAndView index(RedirectAttributes redirectAttributes) {
-
 		File folder  = new File(filepath);
+		if (!folder.exists() && os.equals("Linux")) {
+			try {
+				Files.createDirectory(Paths.get("/tmp/VideoMVC"));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		List<String> contents = new ArrayList<>();
 		for(final File file : folder.listFiles()) {
 			contents.add(file.getName());
