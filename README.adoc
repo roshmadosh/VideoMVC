@@ -20,3 +20,8 @@ maps to `/video/video/health`, where `/video` is the dispatcher mapping.
 
 IMPORTANT: Remember that if your controllers are serving `ViewResolver`s, to _not_ use the `@RestController` 
 annotation. This annotation implicitly uses `@ResponseBody` which automatically serializes the response to JSON.
+
+
+If testing Controllers with `MockMvc.standaloneSetup`, make sure the `javax.servlet-api` dependency is available during 
+runtime, not just compile time. Otherwise you may get a `ClassDefNotFound` exception when the method tries to find the 
+controller(s) you pass as an argument.
