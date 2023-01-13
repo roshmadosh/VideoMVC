@@ -1,14 +1,14 @@
-package link.hiroshisprojects.multipartTest;
+package link.hiroshisprojects.multipart;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import link.hiroshisprojects.multipart.MultipartController;
 import link.hiroshisprojects.mvc.UploadFileRequestBuilder;
 import link.hiroshisprojects.mvc.WebTestConfig;
 
@@ -40,7 +40,8 @@ class MultipartControllerTest {
 			@Test
 			@DisplayName("then status code is 400")
 			void thenReturnHttpStatusBadRequest() throws Exception {
-				requestBuilder.index().andExpect(status().isBadRequest());
+				MockMultipartFile file = new MockMultipartFile("file", "", "application/octet-stream", new byte[0]);
+				requestBuilder.uploadSingleFile(file).andExpect(status().isBadRequest());
 			}
 		}
 

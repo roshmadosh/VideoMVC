@@ -16,6 +16,7 @@ val springmvc = "5.3.18"
 dependencies {
 	implementation("javax.servlet:javax.servlet-api:4.0.1")	
 	testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+	testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.1")
 	implementation("org.apache.httpcomponents:httpclient:4.5.13")
 	implementation("org.springframework:spring-webmvc:$springmvc")
 	implementation("org.springframework:spring-web:$springmvc")
@@ -25,6 +26,8 @@ dependencies {
 	implementation("org.hibernate.validator:hibernate-validator:6.2.0.Final")
 	testImplementation("org.springframework:spring-test:5.3.15")
 	testImplementation("org.mockito:mockito-core:3.11.2")
+	implementation("org.aspectj:aspectjweaver:1.9.7")
+	implementation("org.slf4j:slf4j-api:2.0.6")
 }
 
 tasks.named<Test>("test") {
