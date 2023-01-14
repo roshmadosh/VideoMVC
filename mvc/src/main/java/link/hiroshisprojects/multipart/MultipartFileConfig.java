@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(value = { "link.hiroshisprojects.multipart", "link.hiroshisprojects.error" })
+@ComponentScan({ "link.hiroshisprojects.multipart" })
 public class MultipartFileConfig {
 
 	@Bean

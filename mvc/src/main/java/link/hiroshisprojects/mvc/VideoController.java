@@ -18,7 +18,7 @@ public class VideoController {
 	private List<Video> videos = new ArrayList<>(Arrays.asList(new Video("Jackie Chan Adventures", "google.com", 800)));	
 
 	@GetMapping
-	public List<Video> getVideos() {
+public List<Video> getVideos() {
 		return videos; 
 	}
 	

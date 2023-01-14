@@ -1,4 +1,4 @@
-package link.hiroshisprojects.mvc;
+package link.hiroshisprojects;
 
 import java.io.File;
 
@@ -9,6 +9,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import link.hiroshisprojects.error.ErrorConfig;
 import link.hiroshisprojects.multipart.MultipartFileConfig;
+import link.hiroshisprojects.mvc.WebMvcConfig;
 
 public class FrontControllerConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
 
@@ -21,7 +22,7 @@ public class FrontControllerConfig extends AbstractAnnotationConfigDispatcherSer
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class[] { WebMvcConfig.class, MultipartFileConfig.class, ErrorConfig.class }; 
+		return new Class[] { MainConfig.class, WebMvcConfig.class, MultipartFileConfig.class, ErrorConfig.class }; 
 	}
 
 	@Override
